@@ -1,0 +1,18 @@
+{
+    "actorSpecification": 1,
+    "name": "Visa Checker by Nationality",
+    "title": "Visa Checker (Nationality → Destination)",
+    "description": "Deterministic visa lookup actor that retrieves and normalizes visa requirements for a given nationality and destination using authoritative public sources.",
+    "version": "0.0",
+    "buildTag": "latest",
+    "meta": {
+        "templateId": "ts-crawlee-cheerio",
+        "generatedBy": "<FILL-IN-MODEL>"
+    },
+    "input": "./input_schema.json",
+    "output": "./output_schema.json",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    },
+    "dockerfile": "../Dockerfile"
+}
