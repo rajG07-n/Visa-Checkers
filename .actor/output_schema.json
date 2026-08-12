@@ -1,0 +1,21 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Visa checker output",
+  "properties": {
+    "visaResults": {
+      "type": "string",
+      "title": "Visa results",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "result": {
+      "type": "string",
+      "title": "Summary",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/RESULT"
+    },
+    "reportUrl": {
+      "type": "string",
+      "title": "Visa Report",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/report.html"
+    }
+  }
+}

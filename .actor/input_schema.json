@@ -1,0 +1,40 @@
+{
+    "title": "Visa Lookup Actor Input",
+    "type": "object",
+    "description": "Provide a passport nationality and a destination country to retrieve visa requirements, allowed stay rules, and official notes. Optional language selection enables localized output. The actor validates availability at runtime and returns a clear result even if no visa data is found.",
+    "schemaVersion": 1,
+    "properties": {
+        "nationality": {
+            "title": "Nationality",
+            "type": "string",
+            "description": "Passport nationality (e.g., Indian, United States, Canadian).",
+            "editor": "textfield",
+            "prefill": "Indian"
+        },
+        "destination": {
+            "title": "Destination Country",
+            "type": "string",
+            "description": "Destination country to check visa requirements for.",
+            "editor": "textfield",
+            "prefill": "Thailand"
+        },
+        "language": {
+            "title": "Output Language",
+            "type": "string",
+            "description": "ISO language code for localized output (e.g. en, fr, es, de, hi)",
+            "editor": "textfield",
+            "prefill": "en"
+        },
+        "maxRequestsPerCrawl": {
+            "title": "Max Requests per Crawl",
+            "type": "integer",
+            "description": "Maximum number of requests that can be made by this crawler. Default is 1 because this actor performs a single lookup.",
+            "default": 1
+        }
+    },
+    "required": [
+        "nationality",
+        "destination"
+    ],
+    "additionalProperties": false
+}

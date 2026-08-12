@@ -1,0 +1,177 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": [
+          "visa"
+        ]
+      },
+      "nationality": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "destination": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "visaType": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "visaType_localized": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "maxStayDays": {
+        "type": ["number", "null"]
+      },
+      "allowedStayText": {
+        "type": ["string", "null"]
+      },
+      "allowedStayText_localized": {
+        "type": ["string", "null"]
+      },
+
+      "stayPolicy": {
+        "type": ["string", "null"],
+        "enum": [
+          "fixed",
+          "range",
+          "conditional",
+          "unlimited",
+          "unknown",
+          null
+        ]
+      },
+      "notes": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "notes_localized": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "found": {
+        "type": [
+          "boolean",
+          "null"
+        ]
+      },
+      "scrapedAt": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time"
+      }
+    },
+    "required": [
+      "type",
+      "nationality",
+      "destination",
+      "visaType",
+      "scrapedAt"
+    ],
+    "additionalProperties": true
+  },
+  "views": {
+    "overview": {
+      "title": "Visa overview",
+      "transformation": {
+        "fields": [
+          "type",
+          "nationality",
+          "destination",
+          "visaType",
+          "visaType_localized",
+          "maxStayDays",
+          "allowedStayText",
+          "allowedStayText_localized",
+          "stayPolicy",
+          "notes",
+          "notes_localized",
+          "language",
+          "found",
+          "scrapedAt"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "type": {
+            "label": "Type",
+            "format": "text"
+          },
+          "nationality": {
+            "label": "Nationality",
+            "format": "text"
+          },
+          "destination": {
+            "label": "Destination",
+            "format": "text"
+          },
+          "visaType": {
+            "label": "Visa type (EN)",
+            "format": "text"
+          },
+          "visaType_localized": {
+            "label": "Visa type (Localized)",
+            "format": "text"
+          },
+          "maxStayDays": {
+            "label": "Max Stay (Days)",
+            "format": "number"
+          },
+          "allowedStayText": {
+            "label": "Allowed Stay",
+            "format": "text"
+          },
+          "allowedStayText_localized": {
+            "label": "Allowed Stay (Localized)",
+            "format": "text"
+          },
+          "stayPolicy": {
+            "label": "Stay Policy",
+            "format": "text"
+          },
+          "notes": {
+            "label": "Notes (EN)",
+            "format": "text"
+          },
+          "notes_localized": {
+            "label": "Notes (Localized)",
+            "format": "text"
+          },
+          "language": {
+            "label": "Language",
+            "format": "text"
+          },
+          "found": {
+            "label": "Found",
+            "format": "boolean"
+          },
+          "scrapedAt": {
+            "label": "Scraped at",
+            "format": "date"
+          }
+        }
+      }
+    }
+  }
+}
